@@ -94,6 +94,13 @@ p {
   line-height: 1.5em;
 }
 
+#provider {
+  display: flex;
+  justify-content: center;
+  color: #888;
+}
+
+
 /* Sign-in buttons */
 
 #sign-in {
