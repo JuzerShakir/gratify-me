@@ -8,7 +8,11 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
 
     def github
         @user = User.from_omniauth(request.env["omniauth.auth"])
-        sign_in @user
-        redirect_to :root
+        if @user.provider != 'github'
+            redirect_to :root, alert: 'NoNO'
+        else
+            sign_in @user
+            redirect_to :root
+        end
     end
 end
