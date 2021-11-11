@@ -160,3 +160,16 @@ footer {
     color: #FF8000;
   }
 }
+
+#visitor-count  {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  .alert-info  {
+    margin-top: 20px;
+    margin-bottom: none;
+    padding: 10px;
+    text-align: center;
+  }
+}
