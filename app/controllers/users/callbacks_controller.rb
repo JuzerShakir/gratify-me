@@ -8,7 +8,7 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
 
     def github
         @user = User.from_omniauth(request.env["omniauth.auth"])
-        if sign_in @user
+        unless sign_in @user
             redirect_to :root, alert: 'The email your trying to login with is already in use. You may have signed earlier with a different provider'
         end
         redirect_to :root
