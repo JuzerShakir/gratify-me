@@ -10,16 +10,19 @@
     </div>
   </header>
 
+
   <p id='provider'>Signed in via <%= @user.provider %></p>
 
+
     <h4 class="notes">Your Appreciation Quotes</h4>
-    <div>
-      <% @user.notes.each do | note | %>
-        <div class= "notes say">
-          <%= note.say %>
-        </div>
-      <% end %>
+
+    <%= turbo_stream_from @user, :notes %>
+    <div id="<%= "#{dom_id(@user)}_notes" %>">
+      <div class= "notes say">
+        <%= render @user.notes.order(created_at: :desc) %>
+      </div>
     </div>
+
 
 <% else %>
 
