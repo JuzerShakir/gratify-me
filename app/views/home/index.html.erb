@@ -1,0 +1,35 @@
+<% if user_signed_in? %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "Gratification", :root, id: "logo" %>
+      <nav>
+        <ul>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<% else %>
+
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav>
+        <%= link_to "Gratification", :root, id: "logo" %>
+      </nav>
+    </div>
+  </header>
+
+  <h2>Your personal hub to happiness</h2>
+
+
+  <div id="sign-in">
+    <div class="google-btn">
+      <div class="google-icon-wrapper">
+        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+      </div>
+      <p><b> <%= link_to 'Sign in with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn-text" %></b></p>
+    </div>
+  </div>
+
+<% end %>
