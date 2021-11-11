@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     if user_signed_in?
       @user = current_user
       @user.provider = @user.provider.match(/[a-z]+/).to_s.capitalize
+      @notes = @user.notes
     end
   end
 end

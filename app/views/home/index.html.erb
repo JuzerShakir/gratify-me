@@ -12,6 +12,16 @@
 
   <p id='provider'>Signed in via <%= @user.provider %></p>
 
+  <strong>Your Appreciation Quotes</strong>
+  <div>
+    <% notes.each do | note | %>
+      <div>
+        <%= note.quote %>
+      </div>
+    <% end %>
+  </div>
+
+
 <% else %>
 
   <header class="navbar navbar-fixed-top navbar-inverse">
