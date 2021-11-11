@@ -5,4 +5,10 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
         #session[:user_id] = @user.id
         redirect_to :root
     end
+
+    def github
+        @user = User.from_omniauth(request.env["omniauth.auth"])
+        sign_in @user
+        redirect_to :root
+    end
 end
