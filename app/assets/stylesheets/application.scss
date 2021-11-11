@@ -61,6 +61,11 @@ body {
   background-color: #FCFFDB;
 }
 
+#notes  {
+  display: flex;
+  justify-content: center;
+}
+
 textarea {
   resize: vertical;
 }
