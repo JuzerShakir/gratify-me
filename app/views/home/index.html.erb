@@ -12,15 +12,16 @@
 
   <p id='provider'>Signed in via <%= @user.provider %></p>
 
-  <strong>Your Appreciation Quotes</strong>
-  <div>
-    <% @notes.each do | note | %>
-      <div>
-        <%= note.quote %>
-      </div>
-    <% end %>
+  <div class="container">
+    <h4>Your Appreciation Quotes</h4>
+    <div>
+      <% @notes.each do | note | %>
+        <div>
+          <%= note.say %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
 
 <% else %>
 
