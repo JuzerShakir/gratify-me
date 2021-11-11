@@ -11,9 +11,6 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
         if User.find_by(email: @user.email)
             alert  'The email your trying to login with is already in use. You may have signed earlier with a different provider'
             redirect_to 'youtube.com'
-        else
-            sign_in @user
-            redirect_to :root
         end
 
     end
