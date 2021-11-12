@@ -1,15 +1,15 @@
 class Users::CallbacksController < Devise::OmniauthCallbacksController
     before_action :load_user
+    after_action :show_user
 
     def google_oauth2
-        existing_user if  @user.provider != __method__.match(/[a-z]+/).to_s.capitalize
-        new_user
+        @method_name = __method__.match(/[a-z]+/).to_s.capitalize
     end
 
     def github
-        existing_user if  @user.provider != __method__.to_s.capitalize
-        new_user
+        @method_name = __method__.to_s.capitalize
     end
+
 
     private
 
@@ -24,5 +24,13 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
 
     def new_user
         redirect_to :root, notice: 'Signed in successfully!'
+    end
+
+    def show_user
+        if  @user.provider != @method_name
+            existing_user
+        else
+            new_user
+        end
     end
 end
