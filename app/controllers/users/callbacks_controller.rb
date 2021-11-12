@@ -3,7 +3,7 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
         @user = User.from_omniauth(request.env["omniauth.auth"])
         sign_in @user
         #session[:user_id] = @user.id
-        redirect_to :root
+        redirect_to :root, notice: 'Signed in successfully!'
     end
 
     def github
