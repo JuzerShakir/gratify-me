@@ -20,7 +20,7 @@
         <p class="alert alert-danger"><b><%= alert %></b></p>
       <% end %>
       <% if flash[:headsup] %>
-        <p class="alert alert-warning"><b><%= headsup %></b></p>
+        <p class="alert alert-warning"><b><%= flash[:headsup] %></b></p>
       <% end %>
 
       <%= yield %>
