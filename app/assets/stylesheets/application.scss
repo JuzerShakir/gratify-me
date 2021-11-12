@@ -19,7 +19,7 @@
 
 $white: #fff;
 $google-blue: #4285f4;
-$button-active-blue: #1669F2;
+$button-active-red: #DC143C;
 
 
 #logo {
@@ -70,7 +70,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #home {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -95,10 +96,9 @@ p {
 }
 
 #provider {
-  display: flex;
-  justify-content: center;
   color: #888;
   font-size: 0.8em;
+  /*margin-bottom: 13px;*/
 }
 
 
@@ -106,8 +106,6 @@ p {
 
 #sign-in {
   margin-top: 60px;
-  display: flex;
-  justify-content: center;
 }
 
 .google-btn {
@@ -145,7 +143,7 @@ p {
     box-shadow: 0 0 6px $google-blue;
   }
   &:active {
-    background: $button-active-blue;
+    background: $button-active-red;
   }
 }
 
@@ -170,10 +168,10 @@ footer {
 }
 
 #visitor-count  {
-  .row {
+  /*.row {
     display: flex;
     justify-content: center;
-  }
+  }*/
   .alert-info  {
     margin-top: 50px;
     margin-bottom: none;
