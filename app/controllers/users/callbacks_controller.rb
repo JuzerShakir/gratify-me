@@ -8,10 +8,10 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
 
     def github
         @user = User.from_omniauth(request.env["omniauth.auth"])
+        sign_in @user
         if @user.provider != 'github'
-            redirect_to :root, alert: 'NoNO'
+            redirect_to :root, notice: "The email address #{@user.email} you have logged in with is associated with #{@user.provider} in our database. You're now logged in through #{user.provider}"
         else
-            sign_in @user
             redirect_to :root
         end
     end
