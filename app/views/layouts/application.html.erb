@@ -19,7 +19,7 @@
       <% if alert.present? %>
         <p class="alert alert-danger"><b><%= alert %></b></p>
       <% end %>
-      <% if flash[:headsup].present? %>
+      <% if flash[:headsup] %>
         <p class="alert alert-warning"><b><%= headsup %></b></p>
       <% end %>
 
