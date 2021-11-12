@@ -21,10 +21,19 @@ $white: #fff;
 $google-blue: #4285f4;
 $button-active-blue: #1669F2;
 
-
-#logo {
+/* signed out nav */
+nav {
   display: flex;
   justify-content: center;
+}
+
+header p {
+  padding-top: 9px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+a#logo {
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -0.5px;
@@ -32,7 +41,7 @@ $button-active-blue: #1669F2;
   font-weight: bold;
 }
 
-#logo:hover {
+a#logo:hover {
   color: #888;
   text-decoration: none;
 }
@@ -41,6 +50,7 @@ nav {
   ul {
     padding-left: 0px;
     padding-top: 8px;
+    margin-bottom: 4px;
     li {
       display: flex;
       justify-content: center;
@@ -117,23 +127,19 @@ h4 {
   width: 250px;
   height: 42px;
   background-color: $google-blue;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  box-shadow: 0px 0px 15px #888888;
   .google-icon-wrapper {
     position: absolute;
-    margin-top: 1px;
-    margin-left: 1px;
     width: 40px;
-    height: 40px;
-    border-radius: 2px;
-    background-color: $white;
+    height: 42px;
+    background-color: black;
   }
   .google-icon {
     position: absolute;
-    margin-top: 11px;
-    margin-left: 11px;
-    width: 18px;
-    height: 18px;
+    margin-top: 6px;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
   }
   .btn-text {
     padding-top: 5px;
@@ -158,23 +164,19 @@ h4 {
   width: 250px;
   height: 42px;
   background-color: black;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  box-shadow: 0px 0px 15px #888888;
   .github-icon-wrapper {
     position: absolute;
-    margin-top: 1px;
-    margin-left: 1px;
     width: 40px;
-    height: 40px;
-    border-radius: 2px;
+    height: 42px;
     background-color: $white;
   }
   .github-icon {
     position: absolute;
-    margin-top: 11px;
-    margin-left: 11px;
-    width: 18px;
-    height: 18px;
+    margin-top: 4px;
+    margin-left: 2px;
+    width: 35px;
+    height: 35px;
   }
   .btn-text {
     padding-top: 5px;
@@ -193,6 +195,43 @@ h4 {
     background: black;
   }
 }
+
+.twitter-btn {
+  width: 250px;
+  height: 42px;
+  background-color: #1DA1F2;
+  box-shadow: 0px 0px 15px #888888;
+  .twitter-icon-wrapper {
+    position: absolute;
+    width: 40px;
+    height: 42px;
+    background-color: black;
+  }
+  .twitter-icon {
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  .btn-text {
+    padding-top: 5px;
+    padding-right: 70px;
+    float: right;
+    color: $white;
+    font-size: 23px;
+    letter-spacing: 0.8px;
+    font-family: "Roboto";
+    text-decoration: none;
+  }
+  &:hover {
+    box-shadow: 0 0 10px #0b7fd5;
+  }
+  &:active {
+    background: #0b7fd5;
+  }
+}
+
 
 /* footer */
 

@@ -17,6 +17,13 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
         end
     end
 
+    def twitter
+        if @user.provider == __method__.to_s.capitalize
+            correct_provider
+        else
+            provider_already_exists
+        end
+    end
 
     private
 

@@ -3,7 +3,7 @@
 <% if user_signed_in? %>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <%= link_to "Gratification", :root, id: "logo" %>
+      <p><%= link_to "Gratification", :root, id: "logo" %></p>
       <nav>
         <ul>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
@@ -19,7 +19,7 @@
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
       <nav>
-        <%= link_to "Gratification", :root, id: "logo" %>
+        <a id="logo" href="\" >Graification</a>
       </nav>
     </div>
   </header>
@@ -44,12 +44,24 @@
     <a href="/auth/github" data-method='post' rel='nofollow'>
       <div class="github-btn">
         <div class="github-icon-wrapper">
-          <img class="github-icon" src="https://img.icons8.com/material-rounded/24/000000/github.png"/>
+          <img class="github-icon" src="https://img.icons8.com/material-rounded/48/000000/github.png"/>
         </div>
       <p class="btn-text"> GitHub</p>
     </div>
     </a>
   </div>
+
+  <div id="sign-in">
+    <a href="/auth/twitter" data-method='post' rel='nofollow'>
+      <div class="twitter-btn">
+        <div class="twitter-icon-wrapper">
+          <img class="twitter-icon" src="https://img.icons8.com/fluency/48/000000/twitter.png"/>
+        </div>
+      <p class="btn-text"> Twitter</p>
+    </div>
+    </a>
+  </div>
+<img src=""/>
 
   <div id="visitor-count">
     <div class="row">
