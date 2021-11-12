@@ -14,13 +14,13 @@
 
     <div class='container'>
       <% if notice.present? %>
-        <p class="alert alert-success"><b><%= notice %></b></p>
+        <p class="alert alert-success"><%= notice %></p>
       <% end %>
       <% if alert.present? %>
-        <p class="alert alert-danger"><b><%= alert %></b></p>
+        <p class="alert alert-danger"><%= alert %></p>
       <% end %>
       <% if flash[:headsup] %>
-        <p class="alert alert-warning"><b><%= flash[:headsup] %></b></p>
+        <p class="alert alert-warning"><%= flash[:headsup] %></p>
       <% end %>
 
       <%= yield %>
