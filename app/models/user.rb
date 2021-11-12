@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_create do | user |
-      user.provider = auth.provider
+      user.provider = auth.provider.match(/[a-z]+/).to_s.capitalize
       user.uid = auth.uid
       user.email = auth.info.email
       user.password = Devise.friendly_token
