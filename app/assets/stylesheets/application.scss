@@ -19,7 +19,7 @@
 
 $white: #fff;
 $google-blue: #4285f4;
-$button-active-red: #DC143C;
+$button-active-blue: #1669F2;
 
 
 #logo {
@@ -79,7 +79,7 @@ h1 {
 h2 {
   font-size: 1.8em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   text-align: center;
   font-weight: normal;
   color: #444;
@@ -98,17 +98,23 @@ p {
   /*margin-bottom: 13px;*/
 }
 
+h4 {
+  font-weight: 800;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
 
 /* Sign-in buttons */
 
 #sign-in {
-  margin-top: 60px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 
 .google-btn {
-  width: 195px;
+  width: 170px;
   height: 42px;
   background-color: $google-blue;
   border-radius: 2px;
@@ -130,10 +136,11 @@ p {
     height: 18px;
   }
   .btn-text {
+    padding-top: 10px;
+    padding-right: 35px;
     float: right;
-    margin: 11px 11px 0 0;
     color: $white;
-    font-size: 14px;
+    font-size: 17px;
     letter-spacing: 0.2px;
     font-family: "Roboto";
     text-decoration: none;
@@ -142,7 +149,7 @@ p {
     box-shadow: 0 0 6px $google-blue;
   }
   &:active {
-    background: $button-active-red;
+    background: $button-active-blue;
   }
 }
 

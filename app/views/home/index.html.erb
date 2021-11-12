@@ -1,5 +1,6 @@
 <%= csrf_meta_tags %>
 
+<div id="center">
 <% if user_signed_in? %>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
@@ -26,12 +27,14 @@
 
   <h2>Your personal hub to happiness</h2>
 
+  <h4>Sign in via</h4>
+
   <div id="sign-in">
     <div class="google-btn">
       <div class="google-icon-wrapper">
         <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
       </div>
-      <p><b> <%= link_to 'Sign in with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn-text" %></b></p>
+      <p><b> <%= link_to 'Google', user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn-text" %></b></p>
     </div>
   </div>
 
@@ -41,7 +44,7 @@
       <div class="google-icon-wrapper">
         <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
       </div>
-      <p><b> <%= link_to 'Sign in with GitHub', user_github_omniauth_authorize_path, method: :post, class: "btn-text" %></b></p>
+      <p><b> <%= link_to 'GitHub', user_github_omniauth_authorize_path, method: :post, class: "btn-text" %></b></p>
     </div>
   </div>
 
@@ -57,3 +60,4 @@
   </div>
 
 <% end %>
+</div>
