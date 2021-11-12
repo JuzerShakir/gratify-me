@@ -99,7 +99,7 @@ p {
 }
 
 h4 {
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
@@ -114,7 +114,7 @@ h4 {
 }
 
 .google-btn {
-  width: 170px;
+  width: 250px;
   height: 42px;
   background-color: $google-blue;
   border-radius: 2px;
@@ -136,20 +136,61 @@ h4 {
     height: 18px;
   }
   .btn-text {
-    padding-top: 10px;
-    padding-right: 35px;
+    padding-top: 5px;
+    padding-right: 70px;
     float: right;
     color: $white;
-    font-size: 17px;
+    font-size: 23px;
     letter-spacing: 0.2px;
     font-family: "Roboto";
     text-decoration: none;
   }
   &:hover {
-    box-shadow: 0 0 6px $google-blue;
+    box-shadow: 0 0 10px $google-blue;
   }
   &:active {
     background: $button-active-blue;
+  }
+}
+
+
+.github-btn {
+  width: 250px;
+  height: 42px;
+  background-color: black;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  .github-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: $white;
+  }
+  .github-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    padding-top: 5px;
+    padding-right: 70px;
+    float: right;
+    color: $white;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    text-decoration: none;
+  }
+  &:hover {
+    box-shadow: 0 0 10px black;
+  }
+  &:active {
+    background: black;
   }
 }
 
