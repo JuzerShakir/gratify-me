@@ -69,11 +69,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
-
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -96,6 +91,8 @@ p {
 }
 
 #provider {
+  display: flex;
+  justify-content: center;
   color: #888;
   font-size: 0.8em;
   /*margin-bottom: 13px;*/
@@ -106,6 +103,8 @@ p {
 
 #sign-in {
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
 }
 
 .google-btn {
@@ -168,10 +167,10 @@ footer {
 }
 
 #visitor-count  {
-  /*.row {
+  .row {
     display: flex;
     justify-content: center;
-  }*/
+  }
   .alert-info  {
     margin-top: 50px;
     margin-bottom: none;
