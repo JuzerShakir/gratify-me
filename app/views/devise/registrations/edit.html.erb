@@ -8,8 +8,9 @@
     <div class="field">
       <%= f.label :profile_photo %><br />
       <% if @user.avatar.attached? %>
-        <p align=""><%= cl_image_tag @user.avatar.key, radius: 20, format: :png, gravity: "face", width: 130, height: 180, crop: "thumb" %></p>
+        <%= cl_image_tag @user.avatar.key, radius: 20, format: :png, gravity: "face", width: 130, height: 180, crop: "thumb" %>
       <% end %>
+      <br><br>
       <%= f.file_field :avatar%>
     </div>
 
