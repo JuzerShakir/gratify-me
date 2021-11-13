@@ -14,6 +14,8 @@
 
   <p id='provider'>Signed in via <%= current_user.provider %></p>
 
+  <p><%= link_to "Profile", edit_user_registration_path%></p>
+
 <% else %>
 
   <header class="navbar navbar-fixed-top navbar-inverse">
