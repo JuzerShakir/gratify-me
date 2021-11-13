@@ -67,7 +67,7 @@ nav {
 }
 
 body {
-  padding-top: 6.4em;
+  padding-top: 5.3em;
   background-color: #FCFFDB;
 }
 
@@ -250,18 +250,23 @@ h4 {
 }
 
 
+.edit-title {
+  padding-top: none;
+}
+
+
 .edit-form {
     box-shadow: 0px 0px 50px #999999;
     display: block;
     margin:auto;
     width: 400px;
     padding: 30px;
+    font-size: 1.3em;
 
   .field {
     padding-bottom: 20px;
     width: auto;
   }
-
   .actions  {
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-<h2>Edit Info</h2>
+<h2 class="edit-title">Edit Info</h2>
 
 <div class = "edit-form">
   <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), method: :put ) do |f| %>
@@ -8,12 +8,12 @@
 
     <div class="field">
       <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, size: "30" %>
     </div>
 
     <div class="field">
       <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, size: "30" %>
     </div>
 
     <div class="field">
@@ -28,7 +28,7 @@
 
     <div class="field">
       <%= f.label :gender %><br />
-      <%= f.select :gender, collection: User.genders.keys.to_a %>
+      <%= f.select :gender, User.genders.keys.to_a %>
     </div>
 
     <div class="actions">
