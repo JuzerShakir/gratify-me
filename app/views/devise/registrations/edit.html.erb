@@ -6,6 +6,14 @@
     <p align='center'><b>Email: <%= current_user.email%></b></p><br>
 
     <div class="field">
+      <%= f.label :profile_photo %><br />
+      <% if @user.avatar.attached? %>
+        <p align=""><%= cl_image_tag @user.avatar.key, radius: 20, format: :png, gravity: "face", width: 130, height: 180, crop: "thumb" %></p>
+      <% end %>
+      <%= f.file_field :avatar%>
+    </div>
+
+    <div class="field">
       <%= f.label :first_name %><br />
       <%= f.text_field :first_name, size: "20" %>
     </div>

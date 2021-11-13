@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected
     # we give list of editable attributes to user both while signing up and  updating profile
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :age, :birth_date, :gender]) # for update
+      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :age, :birth_date, :gender, :avatar]) # for update
       devise_parameter_sanitizer.permit(:sign_up, keys: [:provider, :uid, :email, :password, :password_confirmation]) # for signup
     end
 end

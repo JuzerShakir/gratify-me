@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_one_attached :avatar
+
   enum gender: [:undisclosed, :female, :male, :other]
 
   # Include default devise modules. Others available are:
