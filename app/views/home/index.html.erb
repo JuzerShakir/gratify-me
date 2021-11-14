@@ -28,7 +28,7 @@
   <div id="post-quotes">
     <%= form_with url: '/create', method: 'post' do | field | %>
 
-      <p id=box align="center"><%= field.text_area :quote, size: "40x2"%></p>
+      <p id=box align="center"><%= field.text_area :quote%></p>
       <p id="submit" align="center"><%= field.submit "Post Quote", class: "btn btn-primary" %></p>
 
     <% end %>
