@@ -21,7 +21,6 @@ class SaysController < ApplicationController
     @say = Say.find(params[:id])
     if @say.valid?
       @say.update(say_params)
-      p @say
       redirect_to :root, flash: { post: "Post Updated" }
     else
       render :edit
@@ -29,7 +28,6 @@ class SaysController < ApplicationController
   end
 
   def destroy
-    p true
     @say = Say.find(params[:id])
     @say.destroy
     redirect_to :root, flash: { post: "Post Deleted" }
