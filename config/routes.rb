@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  get ':not_found', to: 'home#not_found', constraints: { not_found: /.*/ }
+
 end
 
