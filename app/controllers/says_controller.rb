@@ -9,7 +9,7 @@ class SaysController < ApplicationController
       current_user.save
       redirect_to :root
     else
-      redirect_to :root, flash: { validation: "Can't be blank" }
+      redirect_to :root, flash: { validation: "Quote can't be blank" }
     end
   end
 
@@ -19,8 +19,8 @@ class SaysController < ApplicationController
 
   def update
     @say = Say.find(params[:id])
+    @say.update(update_params)
     if @say.valid?
-      @say.update(update_params)
       redirect_to :root, flash: { post: "Post Updated" }
     else
       render :edit

@@ -1,7 +1,17 @@
+<% if @say.errors.messages.any? %>
+    <div id="error_explanation">
+    <% @say.errors.full_messages.each do | message | %>
+      <%= message %>
+    <% end %>
+  <% end %>
+</div>
+
   <div id="post-quotes">
     <%= form_with model: @say, url: :edit_quote,  method: 'put', local: true do | field | %>
 
       <p id=box align="center"><%= field.text_area :quote %></p>
+      <br>
+      <br>
       <p id="submit" align="center"><%= field.submit "Update Quote", class: "btn btn-primary" %>
         <br>
         <br>
