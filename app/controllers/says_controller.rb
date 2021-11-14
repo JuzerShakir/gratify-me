@@ -16,7 +16,7 @@ class SaysController < ApplicationController
   def edit
     # if user manually tries visit wrong id in url
     begin
-      Say.find(params[:id])
+      @say = Say.find(params[:id])
     rescue
       redirect_to controller: :home, action: :not_found
     end
