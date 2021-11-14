@@ -44,7 +44,7 @@
     </div>
   <% end %>
 
-  <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+  <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure you want to delete your account?\nYou won't be able to recover your quotes!" }, method: :delete, class: "btn btn-danger" %></p>
 
   <br>
 
