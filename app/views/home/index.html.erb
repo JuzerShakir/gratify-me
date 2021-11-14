@@ -36,12 +36,21 @@
 
   <br>
 
+  <div id="search">
+    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input 'query' ,input_html: {value: ""} %>
+      <%= f.submit "Search Quotes", class: "btn btn-warning" %>
+    <% end %>
+  </div>
+
+  <br>
+
   <% if flash[:post] %>
     <p class="alert alert-success"><%= flash[:post] %></p>
   <% end %>
 
   <div id="show-quotes">
-    <% current_user.says.order(created_at: :desc).each do | quotes | %>
+    <% @say.order(created_at: :desc).each do | quotes | %>
       <span>
         <a href=<%= edit_quote_path(quotes.id) %>>
           <%= quotes.quote %>

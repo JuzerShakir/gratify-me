@@ -310,11 +310,33 @@ h4 {
   }
 }
 
+input {
+  display: block;
+  margin:auto;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-color: #FFFF00;
+}
+
+label.string.required {
+  display: none;
+}
+
+.btn-warning  {
+  color: black;
+  display: block;
+  margin:auto;
+  &:hover {
+    color: black;
+  }
+}
+
+
 #post-quotes  {
   display: block;
   textarea{
     font-family: fangsong;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5em;
     padding: 10px;
     background-color: transparent;

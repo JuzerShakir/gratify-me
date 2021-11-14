@@ -32,6 +32,8 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'cloudinary'
+gem 'simple_form'
+gem 'bootstrap', '~> 4.2.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
