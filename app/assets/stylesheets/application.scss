@@ -293,7 +293,7 @@ h4 {
 
 /* Say */
 .btn-primary {
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 #error_explanation {
@@ -314,13 +314,17 @@ h4 {
   display: block;
   textarea{
     font-family: fangsong;
-    font-size: 18px;
-    line-height: 3em;
+    font-size: 1.2em;
+    line-height: 2.5em;
     padding: 10px;
     background-color: transparent;
     border: none;
     box-shadow: 0px 0px 5px #FFFF00;
     resize: auto;
+
+    btn {
+
+    }
   }
 }
 
@@ -328,7 +332,7 @@ h4 {
   font-family: fangsong;
   span {
     display: block;
-    font-size: 1.6em;
+    font-size: 1.3em;
     text-align: center;
     margin: 50px;
     padding: 10px;
