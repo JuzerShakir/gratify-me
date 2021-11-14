@@ -33,6 +33,7 @@ gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'cloudinary'
 gem 'simple_form'
+gem 'pagy'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

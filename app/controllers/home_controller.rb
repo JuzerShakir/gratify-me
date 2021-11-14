@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @total = User.all.count
 
     if user_signed_in?
-      @say = current_user.says
+      @pagy, @say = pagy(current_user.says.all, items: 10)
     end
 
     @search = params["search"]
