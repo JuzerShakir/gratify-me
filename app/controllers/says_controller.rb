@@ -13,9 +13,31 @@ class SaysController < ApplicationController
     end
   end
 
+  def edit
+    @say = Say.find(params[:id])
+  end
+
+  def update
+    @say = Say.find(params[:id])
+    if @say.valid?
+      @say.update(say_params)
+      p @say
+      redirect_to :root, flash: { post: "Post Updated" }
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    p true
+    @say = Say.find(params[:id])
+    @say.destroy
+    redirect_to :root, flash: { post: "Post Deleted" }
+  end
+
   private
 
     def say_params
-      params.permit(:quote)
+      params.require(:say).permit(:quote)
     end
 end

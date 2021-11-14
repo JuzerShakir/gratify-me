@@ -321,23 +321,41 @@ h4 {
     border: none;
     box-shadow: 0px 0px 5px #FFFF00;
     resize: auto;
-
-    btn {
-
-    }
   }
+}
+
+.alert {
+  text-align:center;
+  width: fit-content;
+  margin: auto;
 }
 
 #show-quotes  {
   font-family: fangsong;
   span {
     display: block;
-    font-size: 1.3em;
-    text-align: center;
+    font-size: 1.2em;
+    text-align: left;
     margin: 50px;
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px #FFFF66;
+    box-shadow: 0px 0px 4px orange;
+    a {
+      color: black;
+      &:hover {
+        text-decoration: none;
+      }
+      &:active  {
+        text-decoration: none;
+      }
+    }
+    p#time {
+      color: grey;
+      font-size: 0.6em;
+      margin: 0 0 0px;
+      padding-top: 15px;
+      text-align:center;
+    }
   }
 }
 /* footer */

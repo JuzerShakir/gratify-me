@@ -34,9 +34,20 @@
     <% end %>
   </div>
 
+  <br>
+
+  <% if flash[:post] %>
+    <p class="alert alert-success"><%= flash[:post] %></p>
+  <% end %>
+
   <div id="show-quotes">
     <% current_user.says.order(created_at: :desc).each do | quotes | %>
-      <span><%= quotes.quote %></span>
+      <span>
+        <a href=<%= edit_quote_path(quotes.id) %>>
+          <%= quotes.quote %>
+        </a>
+        <p id="time"> <%= quotes.created_at.to_formatted_s(:long) %></p>
+      </span>
     <% end %>
   </div>
 

@@ -1,0 +1,14 @@
+  <div id="post-quotes">
+    <%= form_with model: @say, url: :edit_quote,  method: 'put', local: true do | field | %>
+
+      <p id=box align="center"><%= field.text_area :quote %></p>
+      <p id="submit" align="center"><%= field.submit "Update Quote", class: "btn btn-primary" %>
+        <br>
+        <br>
+        <a href= "<%= delete_quote_path(@say.id) %>" data-method="delete" rel='nofollow' data-confirm="Are you sure?">
+          <button align="center" type="button" class="btn btn-danger">Delete Post</button>
+        </a>
+      </p>
+    <% end %>
+
+  </div>

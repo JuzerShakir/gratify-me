@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :avatar
-  has_many :says
+  has_many :says, dependent: :destroy
 
   enum gender: [:undisclosed, :female, :male, :other]
 
