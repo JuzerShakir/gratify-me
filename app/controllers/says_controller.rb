@@ -4,7 +4,7 @@ class SaysController < ApplicationController
   end
 
   def create
-    current_user.says.new(say_params)
+    current_user.says.new(create_params)
     if current_user.valid?
       current_user.save
       redirect_to :root
@@ -20,7 +20,7 @@ class SaysController < ApplicationController
   def update
     @say = Say.find(params[:id])
     if @say.valid?
-      @say.update(say_params)
+      @say.update(update_params)
       redirect_to :root, flash: { post: "Post Updated" }
     else
       render :edit
@@ -35,7 +35,11 @@ class SaysController < ApplicationController
 
   private
 
-    def say_params
+    def create_params
+      params.permit(:quote)
+    end
+
+    def update_params
       params.require(:say).permit(:quote)
     end
 end

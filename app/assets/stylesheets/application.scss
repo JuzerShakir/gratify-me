@@ -315,7 +315,7 @@ h4 {
   textarea{
     font-family: fangsong;
     font-size: 1.2em;
-    line-height: 2.5em;
+    line-height: 1.5em;
     padding: 10px;
     background-color: transparent;
     border: none;
@@ -340,6 +340,7 @@ h4 {
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0px 0px 4px orange;
+    height: auto;
     a {
       color: black;
       &:hover {
