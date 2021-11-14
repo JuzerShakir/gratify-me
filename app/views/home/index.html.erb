@@ -16,6 +16,30 @@
 
   <p><%= link_to "Edit profile", edit_user_registration_path%></p>
 
+
+  <% if flash[:validation] %>
+    <div id="error_explanation">
+      <p align="center"><%= flash[:validation] %></p>
+    </div>
+  <% end %>
+
+  <br>
+
+  <div id="post-quotes">
+    <%= form_with url: '/create', method: 'post' do | field | %>
+
+      <p id=box align="center"><%= field.text_area :quote, size: "40x2"%></p>
+      <p id="submit" align="center"><%= field.submit "Post Quote", class: "btn btn-primary" %></p>
+
+    <% end %>
+  </div>
+
+  <div id="show-quotes">
+    <% current_user.says.order(created_at: :desc).each do | quotes | %>
+      <span><%= quotes.quote %></span>
+    <% end %>
+  </div>
+
 <% else %>
 
   <header class="navbar navbar-fixed-top navbar-inverse">

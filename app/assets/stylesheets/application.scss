@@ -290,6 +290,53 @@ h4 {
     }
   }
 }
+
+/* Say */
+.btn-primary {
+  font-size: 1.3em;
+}
+
+#error_explanation {
+  color: red;
+  background-color: #FFBFBF;
+  border-radius: 15px;
+  padding: 10px;
+  margin:auto;
+  width:20%;
+  font-size: 1.3em;
+  font-family: "Roboto";
+  p {
+    margin: 0 0 0px;
+  }
+}
+
+#post-quotes  {
+  display: block;
+  textarea{
+    font-family: fangsong;
+    font-size: 18px;
+    line-height: 1.5em;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 0px 5px #FFFF00;
+    resize: auto;
+  }
+}
+
+#show-quotes  {
+  font-family: fangsong;
+  span {
+    display: block;
+    font-size: 1.6em;
+    text-align: center;
+    margin: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #FFFF66;
+  }
+}
 /* footer */
 
 footer {
