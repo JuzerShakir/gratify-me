@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  #protect_from_forgery with: :exception
-  #before_action :authenticate_user!
   include Pagy::Backend
 
   # to override default params of devise, run the method only if its a controller of devise
