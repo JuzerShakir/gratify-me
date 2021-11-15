@@ -71,6 +71,7 @@ $dark-orange: #ff8000;
 @mixin block-auto {
   display: block;
   margin: auto;
+  width: fit-content;
 }
 
 
@@ -267,7 +268,7 @@ h4 {
 }
 
 #logo:hover {
-  color: #888;
+  color: $light-grey;
 }
 
 nav#signed {
@@ -285,18 +286,17 @@ nav#signed {
 
 /*------------ Edit quote page -------*/
 .edit-form {
-    @include block-auto;
-    box-shadow: 0px 0px 50px $dark-grey;
-    width: fit-content;
-    padding-bottom: 30px;
-    padding-top: 10px;
-    padding-right: 40px;
-    padding-left:40px;
-    font-size: 1em;
+  @include block-auto;
+  box-shadow: 0px 0px 50px $dark-grey;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-left:40px;
+  font-size: 1em;
 
-    h2 {
-      margin-bottom: 20px;
-    }
+  h2 {
+    margin-bottom: 20px;
+  }
   .field {
     padding-bottom: 20px;
     width: auto;
@@ -316,6 +316,10 @@ nav#signed {
   }
 }
 
+/* gave specifically to not align field box itself to align left after showing validation error */
+div.field_with_errors {
+  @include block-auto;
+}
 
 /* --------Search Quotes ------- */
 div.input.string.required.search_query input {
