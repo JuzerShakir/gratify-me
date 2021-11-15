@@ -1,3 +1,16 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Gratify", :root, id: "logo" %>
+    <nav id="signed">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Back", :root %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<br>
+
 <% if @say.errors.messages.any? %>
     <div id="error_explanation">
     <% @say.errors.full_messages.each do | message | %>
@@ -10,8 +23,6 @@
     <%= form_with model: @say, url: :edit_quote,  method: 'put', local: true do | field | %>
 
       <p id=box align="center"><%= field.text_area :quote %></p>
-      <br>
-      <br>
       <p id="submit" align="center"><%= field.submit "Update Quote", class: "btn btn-primary" %>
         <br>
         <br>

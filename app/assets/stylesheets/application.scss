@@ -27,47 +27,41 @@ nav {
   justify-content: center;
 }
 
-header p {
-  padding-top: 9px;
-  margin-bottom: 0px;
-  text-align: center;
-}
+/* ------------------ */
 
-a#logo {
+/* signed-in nav */
+#logo {
+  float: left;
+  margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
 
-a#logo:hover {
+#logo:hover {
   color: #888;
   text-decoration: none;
 }
 
-nav {
-  ul {
-    padding-left: 0px;
-    padding-top: 8px;
-    margin-bottom: 4px;
-    li {
-      display: flex;
-      justify-content: center;
-      font-size: 1.1em;
-      a {
-        color: #888;
-      }
-      a:hover {
-        color: $white;
-        text-decoration: none;
-      }
-    }
+nav#signed {
+  display: flex;
+  justify-content: end;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: $white;
+  font-size: large;
+  &:hover, &:active {
+    color: green;
   }
 }
 
+/* -----------------  */
+
 body {
-  padding-top: 5.3em;
+  padding-top: 4em;
   background-color: #FCFFDB;
 }
 
@@ -103,9 +97,8 @@ p {
 #provider {
   display: flex;
   justify-content: center;
-  color: #888;
+  color: green;
   font-size: 0.8em;
-  /*margin-bottom: 13px;*/
 }
 
 
@@ -253,11 +246,11 @@ h4 {
     box-shadow: 0px 0px 50px #999999;
     display: block;
     margin:auto;
-    width: 340px;
+    width: fit-content;
     padding-bottom: 30px;
     padding-top: 10px;
-    padding-right: 20px;
-    padding-left:20px;
+    padding-right: 40px;
+    padding-left:40px;
     font-size: 1em;
 
     h2 {
@@ -310,12 +303,14 @@ h4 {
   }
 }
 
-input {
+div.input.string.required.search_query input {
   display: block;
   margin:auto;
   margin-bottom: 10px;
   background-color: transparent;
   border-color: #FFFF00;
+  padding: 7px;
+
 }
 
 label.string.required {

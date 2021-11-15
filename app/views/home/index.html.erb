@@ -3,18 +3,16 @@
 <% if user_signed_in? %>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <p><%= link_to "Gratification", :root, id: "logo" %></p>
-      <nav>
-        <ul>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <%= link_to "Gratify", :root, id: "logo" %>
+      <nav id="signed">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Profile", :edit_user_registration %></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <p id='provider'>Signed in via <%= current_user.provider %></p>
-
-  <p><%= link_to "Edit profile", edit_user_registration_path%></p>
 
   <% if flash[:validation] %>
     <div id="error_explanation">
@@ -38,7 +36,7 @@
 
   <div id="search">
     <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input 'query' ,input_html: {value: ""} %>
+      <%= f.input 'query' ,input_html: {value: ""}, class: "search_input" %>
       <%= f.submit "Search Quotes", class: "btn btn-warning" %>
     <% end %>
   </div>
@@ -67,7 +65,7 @@
 
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <nav>
+      <nav id="non-signed">
         <a id="logo" href="\" >Graification</a>
       </nav>
     </div>
