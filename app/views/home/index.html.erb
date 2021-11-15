@@ -1,16 +1,8 @@
 <%= csrf_meta_tags %>
 
 <% if user_signed_in? %>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <%= link_to "Gratify", :root, id: "logo" %>
-      <nav id="signed">
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Profile", :edit_user_registration %></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+
+  <%= render "devise/shared/signin-header-home" %>
 
   <p id='provider'>Signed in via <%= current_user.provider %></p>
 
@@ -63,13 +55,7 @@
 
 <% else %>
 
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <nav id="non-signed">
-        <a id="logo" href="\" >Graification</a>
-      </nav>
-    </div>
-  </header>
+ <%= render "devise/shared/signout-header" %>
 
   <h2>Your personal hub to happiness</h2>
 
