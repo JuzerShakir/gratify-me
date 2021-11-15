@@ -1,5 +1,7 @@
 class SaysController < ApplicationController
+  # load user before running in actions
   before_action :current_user
+
   def new
   end
 
@@ -39,7 +41,7 @@ class SaysController < ApplicationController
   end
 
   private
-
+    # w2 different params for update and create since we load model data differently in both methods
     def create_params
       params.permit(:quote)
     end

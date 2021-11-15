@@ -271,6 +271,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
+  # credential for these providers is stroed in 'config/credential.yml' file
   config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :id), Rails.application.credentials.dig(:google, :secret), { scope: "userinfo.email" }
   config.omniauth :github, Rails.application.credentials.dig(:github, :id), Rails.application.credentials.dig(:github, :secret), { scope: "user:email"}
   config.omniauth :twitter, Rails.application.credentials.dig(:twitter, :id), Rails.application.credentials.dig(:twitter, :secret)

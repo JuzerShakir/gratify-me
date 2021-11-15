@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+# following extra gems added
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth'
