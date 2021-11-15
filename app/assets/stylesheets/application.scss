@@ -17,52 +17,82 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Variables for colors */
 $white: #fff;
+$off-white: #FCFFDB;
 $google-blue: #4285f4;
 $button-active-blue: #1669F2;
+$twitter-blue: #1DA1F2;
+$twitter-dark-blue: #0b7fd5;
+$dark-grey: #999999;
+$light-grey: #888888;
+$dark-brown: #a75e11;
+$dark-orange: #ff8000;
 
-/* signed out nav */
-nav {
+
+/* -------------------- */
+/* mixins  (DRY) */
+@mixin flex-center {
   display: flex;
   justify-content: center;
 }
 
-/* ------------------ */
-
-/* signed-in nav */
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+@mixin provider-button {
+  width: 200px;
+  height: 42px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px $light-grey;
 }
 
-#logo:hover {
-  color: #888;
-  text-decoration: none;
+@mixin provider-icon-wrapper {
+  position: absolute;
+  border-radius: 15px 0px 0px 15px;
+  width: 60px;
+  height: 42px;
+  background-color: black;
 }
 
-nav#signed {
-  display: flex;
-  justify-content: end;
+@mixin provider-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+@mixin provider-btn-txt {
+  padding-top: 3px;
+  padding-right: 40px;
+  float: right;
   color: $white;
-  font-size: large;
-  &:hover, &:active {
-    color: green;
+  font-size: 23px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+}
+
+@mixin block-auto {
+  display: block;
+  margin: auto;
+}
+
+
+/* ------------ */
+
+/* Predefine common html attributes value  */
+
+a {
+  &:hover {
+    text-decoration:none;
+  }
+  &:active {
+    text-decoration:none;
+  }
+  &:focus {
+    text-decoration: none;
   }
 }
 
-/* -----------------  */
-
 body {
   padding-top: 4em;
-  background-color: #FCFFDB;
+  background-color: $off-white;
 }
 
 textarea {
@@ -94,22 +124,40 @@ p {
   line-height: 1.5em;
 }
 
-a {
+.btn-text {
+  @include provider-btn-txt;
+}
+
+.btn-primary {
+  font-size: 1em;
+}
+
+.btn-warning, .btn-info {
+  @include block-auto;
+  color: black;
   &:hover {
-    text-decoration:none;
-  }
-  &:active {
-    text-decoration:none;
+    color: black;
   }
 }
 
+.alert {
+  text-align:center;
+  width: fit-content;
+  margin: auto;
+}
+
+/* -------For signed out user----------- */
+/* signed out nav */
+nav {
+  @include flex-center;
+}
+
+/* sign-in text provider */
 #provider {
-  display: flex;
-  justify-content: center;
+  @include flex-center;
   color: green;
   font-size: 0.8em;
 }
-
 
 #sign-in-box  {
   margin:auto;
@@ -117,56 +165,40 @@ a {
   padding-bottom: 55px;
   width: 320px;
   border-radius: 15px;
-  box-shadow: 0px 0px 50px #999999;
+  box-shadow: 0px 0px 50px $dark-grey;
 }
 
+/* sign-in header */
 h4 {
   font-size: 1.5em;
   letter-spacing: -0.5px;
   font-weight: 500;
   margin-bottom: 35px;
-  display: flex;
-  justify-content: center;
+  @include flex-center;
 }
 
 /* Sign-in buttons */
-
 #sign-in {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  @include flex-center;
 }
 
 .google-btn {
-  width: 200px;
-  height: 42px;
-  border-radius: 15px;
+  @include provider-button;
   background-color: $google-blue;
-  box-shadow: 0px 0px 10px #888888;
+
   .google-icon-wrapper {
-    position: absolute;
-    border-radius: 15px 0px 0px 15px;
-    width: 60px;
-    height: 42px;
-    background-color: black;
+    @include provider-icon-wrapper;
   }
+
   .google-icon {
-    position: absolute;
-    margin-top: 6px;
-    margin-left: 15px;
+    @include provider-icon;
     width: 30px;
     height: 30px;
+    margin-top: 6px;
+    margin-left: 15px;
   }
-  .btn-text {
-    padding-top: 3px;
-    padding-right: 40px;
-    float: right;
-    color: $white;
-    font-size: 23px;
-    letter-spacing: 0.2px;
-    font-family: "Roboto";
-    text-decoration: none;
-  }
+
   &:hover {
     box-shadow: 0 0 20px $google-blue;
   }
@@ -177,35 +209,20 @@ h4 {
 
 
 .github-btn {
-  width: 200px;
-  height: 42px;
+  @include provider-button;
   background-color: black;
-  border-radius: 15px;
-  box-shadow: 0px 0px 10px #888888;
+
   .github-icon-wrapper {
-    position: absolute;
-    border-radius: 15px 0px 0px 15px;
-    width: 60px;
-    height: 42px;
+    @include provider-icon-wrapper;
     background-color: $white;
   }
+
   .github-icon {
-    position: absolute;
+    @include provider-icon;
     margin-top: 2px;
     margin-left: 12px;
-    width: 40px;
-    height: 40px;
   }
-  .btn-text {
-    padding-top: 3px;
-    padding-right: 40px;
-    float: right;
-    color: $white;
-    font-size: 23px;
-    letter-spacing: 0.2px;
-    font-family: "Roboto";
-    text-decoration: none;
-  }
+
   &:hover {
     box-shadow: 0 0 20px black;
   }
@@ -215,46 +232,61 @@ h4 {
 }
 
 .twitter-btn {
-  width: 200px;
-  height: 42px;
-  background-color: #1DA1F2;
-  border-radius: 15px;
-  box-shadow: 0px 0px 10px #888888;
+  @include provider-button;
+  background-color: $twitter-blue;
+
   .twitter-icon-wrapper {
-    position: absolute;
-    border-radius: 15px 0px 0px 15px;
-    width: 60px;
-    height: 42px;
-    background-color: black;
+    @include provider-icon-wrapper;
   }
+
   .twitter-icon {
-    position: absolute;
+    @include provider-icon;
     margin-top: 1.5px;
     margin-left: 11px;
-    width: 40px;
-    height: 40px;
   }
-  .btn-text {
-    padding-top: 3px;
-    padding-right: 40px;
-    float: right;
-    color: $white;
-    font-size: 23px;
-    font-family: "Roboto";
-    text-decoration: none;
-  }
+
   &:hover {
-    box-shadow: 0 0 20px #0b7fd5;
+    box-shadow: 0 0 20px $twitter-dark-blue;
   }
   &:active {
-    background: #0b7fd5;
+    background: $twitter-dark-blue;
   }
 }
 
+
+/* -----For signed in users------ */
+/* Header nav */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color:$white;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #888;
+}
+
+nav#signed {
+  display: flex;
+  justify-content: end;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: $white;
+  font-size: large;
+  &:hover, &:active {
+    color: green;
+  }
+}
+
+/*------------ Edit quote page -------*/
 .edit-form {
-    box-shadow: 0px 0px 50px #999999;
-    display: block;
-    margin:auto;
+    @include block-auto;
+    box-shadow: 0px 0px 50px $dark-grey;
     width: fit-content;
     padding-bottom: 30px;
     padding-top: 10px;
@@ -270,34 +302,35 @@ h4 {
     width: auto;
   }
   .actions  {
-    display: flex;
-    justify-content: center;
+    @include flex-center;
   }
   .btn {
     font-size: 1.2em;
-    display: block;
-    margin: auto;
+    @include block-auto;
     margin-top: 20px;
   }
   a {
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     font-size: 1.2em;
     font-weight: 600;
-    &:hover {
-      text-decoration: none;
-    }
-    &:focus {
-      text-decoration: none;
-    }
   }
 }
 
-/* Say */
-.btn-primary {
-  font-size: 1em;
+
+/* --------Search Quotes ------- */
+div.input.string.required.search_query input {
+  @include block-auto;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-color: #FFFF00;
+  padding: 7px;
+
+}
+label.string.required {
+  display: none;
 }
 
+/* --------------------- Post quotes------------ */
 #error_explanation {
   color: red;
   background-color: #FFBFBF;
@@ -311,32 +344,6 @@ h4 {
     margin: 0 0 0px;
   }
 }
-
-div.input.string.required.search_query input {
-  display: block;
-  margin:auto;
-  margin-bottom: 10px;
-  background-color: transparent;
-  border-color: #FFFF00;
-  padding: 7px;
-
-}
-
-label.string.required {
-  display: none;
-}
-
-.btn-warning, .btn-info {
-  color: black;
-  display: block;
-  margin:auto;
-  text-decoration: none;
-  &:hover {
-    color: black;
-    text-decoration: none;
-  }
-}
-
 
 #post-quotes  {
   display: block;
@@ -352,12 +359,7 @@ label.string.required {
   }
 }
 
-.alert {
-  text-align:center;
-  width: fit-content;
-  margin: auto;
-}
-
+/* ----------- All quotes of user ------------ */
 #show-quotes  {
   font-family: fangsong;
   span {
@@ -371,12 +373,6 @@ label.string.required {
     height: auto;
     a {
       color: black;
-      &:hover {
-        text-decoration: none;
-      }
-      &:active  {
-        text-decoration: none;
-      }
     }
     p#time {
       color: grey;
@@ -387,45 +383,44 @@ label.string.required {
     }
   }
 }
-/* footer */
 
-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-  padding-top: 5px;
-  border-top: 2px solid #eaeaea;
-  color: #777;
-  font-size: 14px;
-
-  a {
-    color: #A75E11;
-  }
-
-  a:hover {
-    color: #FF8000;
-  }
-}
-
+/* -----External links button----- */
 #extra-info {
   text-align: center;
-  display: flex;
-  justify-content: center;
+  @include flex-center;
   margin-top: 60px;
   button {
     margin-right: 10px;
   }
 }
 
+/* ------------------- */
 #visitor-count  {
   .row {
-    display: flex;
-    justify-content: center;
+    @include flex-center;
   }
   .alert-info  {
     margin-top: 50px;
     margin-bottom: none;
     padding: 10px;
     text-align: center;
+  }
+}
+
+
+/*--------- footer----------- */
+footer {
+  @include flex-center;
+  margin-top: 25px;
+  padding-top: 5px;
+  border-top: 2px solid $light-grey;
+  color: $light-grey;
+  font-size: 14px;
+
+  a {
+    color: $dark-brown;
+  }
+  a:hover {
+    color: $dark-orange;
   }
 }
