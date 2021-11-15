@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GratifyMe</title>
+    <title>Gratify Me</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,12 +14,15 @@
 
     <div class='container'>
       <% if notice.present? %>
+        <br>
         <p class="alert alert-success"><%= notice %></p><br>
       <% end %>
       <% if alert.present? %>
+        <br>
         <p class="alert alert-danger"><%= alert %></p><br>
       <% end %>
       <% if flash[:headsup] %>
+        <br>
         <p class="alert alert-warning"><%= flash[:headsup] %></p><br>
       <% end %>
 

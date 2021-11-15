@@ -94,6 +94,12 @@ p {
   line-height: 1.5em;
 }
 
+a {
+  &:hover {
+    text-decoration:none;
+  }
+}
+
 #provider {
   display: flex;
   justify-content: center;
@@ -317,12 +323,14 @@ label.string.required {
   display: none;
 }
 
-.btn-warning  {
+.btn-warning, .btn-info {
   color: black;
   display: block;
   margin:auto;
+  text-decoration: none;
   &:hover {
     color: black;
+    text-decoration: none;
   }
 }
 
@@ -393,6 +401,16 @@ footer {
 
   a:hover {
     color: #FF8000;
+  }
+}
+
+#extra-info {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  button {
+    margin-right: 10px;
   }
 }
 
