@@ -6,20 +6,18 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
     # respective provider function will run based on what provider user logged in from
     def google_oauth2
         # __method__ will provide us with the name of the provider he logged in from
-        # then we apply a little regexp to match the with the name set in database
-        provider_method = __method__.match(/[a-z]+/).to_s.capitalize
+        # then we apply a regexp to match the with the name set in database
+
         # we call function to check if user has logged in from correct provider
-        check_provider(provider_method)
+        check_provider(__method__.match(/[a-z]+/).to_s.capitalize)
     end
 
     def github
-        provider_method = __method__.to_s.capitalize
-        check_provider(provider_method)
+        check_provider(__method__.to_s.capitalize)
     end
 
     def twitter
-        provider_method = __method__.to_s.capitalize
-        check_provider(provider_method)
+        check_provider(__method__.to_s.capitalize)
     end
 
 
