@@ -1,5 +1,5 @@
 # Project: Gratify
-*Your go-to hub for keeping track of notes, quotes, and anything that is text-based. Built with Devise + Omniauth + (Active Storage + Cloudinary) + Simple Form + Pagy.*
+*A go-to hub for keeping track of notes, quotes, and anything that is text-based. Built with Ruby gems such as Devise + Omniauth + (Active Storage + Cloudinary) + Simple Form + Pagy.*
 
 <div align="center">
   <img src="public/assets/project_logo.png" />
@@ -14,18 +14,18 @@
 
 ## ❗ Objectives
 This web-app must accomplish the following:
-- [x] Login user with social services (providers) such as Google, GitHub & Twitter with the help of Devise and Omniauth.
+- [x] Login users with social services (providers) such as Google, GitHub & Twitter with the help of Devise and Omniauth.
 - [x] Make sure there's only one login created for each email regardless of which provider he/she uses.
-- [x] If a user signs in with same email but with different provider, automatically signin with the provider they logged in initially.
-- [x] After user signs in, they can add more info about them via Profile page.
-- [x] Ability to add profile photo via Active Storage & Cloudinary and display photo on the page with focus on face.
-- [x] Users can then add notes, quotes etc to their feed. Show error when they try to add empty post.
-- [x] Show users' posts in their homepage sorted from latest.
-- [x] Provide users the ability to search words or expression of the post they created through Search Form gem.
-- [x] Show appropraite flash messages where-ever necessory.
-- [x] Show sign up count to logged out users.
+- [x] If a user signs in with the same email but with a different provider, automatically sign in with the provider they logged in initially.
+- [x] After user signs in, they can add more info about them via the Profile page.
+- [x] Ability to add profile photos via Active Storage & Cloudinary and display photos on the page with a focus on the face.
+- [x] Users can then add notes, quotes, etc to their feed. Show error when they try to add an empty post.
+- [x] Show users' posts on their homepage sorted from the latest.
+- [x] Provide users the ability to search words or expressions of the post they created through the Search Form gem.
+- [x] Show appropriate flash messages wherever necessary.
+- [x] Show sign-up count to logged-out users.
 - [x] Build a responsive site using bootstrap.
-- [X] When a user manually enters a url that doesnt exist, redirect them to homepage with a flash message informing them that url doesn't exist.
+- [X] When a user manually enters a URL that doesn't exist, redirect them to the homepage with a flash message informing them that the URL doesn't exist.
 
 ----
 
