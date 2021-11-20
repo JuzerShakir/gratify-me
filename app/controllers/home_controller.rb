@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     if user_signed_in?
       # for pagination we use @pagy and number of posts to show per page is 10
       # also load all the posts of the user
-      @pagy, @say = pagy(current_user.says.all, items: 10)
+      @pagy, @says = pagy(current_user.says.all, items: 10)
     end
 
     # for enabling search

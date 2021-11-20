@@ -40,7 +40,7 @@
   <% end %>
 
   <div id="show-quotes">
-    <% @say.order(created_at: :desc).each do | quotes | %>
+    <% @says.order(created_at: :desc).each do | quotes | %>
       <span>
         <a href=<%= edit_quote_path(quotes.id) %>>
           <%= quotes.quote %>
