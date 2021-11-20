@@ -22,7 +22,7 @@ class HomeController < ApplicationController
       @query = @search['query']
       # using SQL commands to search smartly
       # loads all the quotes that matches the query in case-insensitive
-      @say = @say.where("quote ILIKE ?", "%#{@query}%" )
+      @says = @says.where("quote ILIKE ?", "%#{@query}%" )
     end
   end
 
