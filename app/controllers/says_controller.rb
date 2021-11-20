@@ -26,8 +26,8 @@ class SaysController < ApplicationController
 
   def update
     @say = Say.find(params[:id])
-    if @say.valid?
-      @say.update_attibute(update_params)
+
+    if @say.update(update_params)
       redirect_to :root, flash: { post: "Post Updated" }
     else
       render :edit
