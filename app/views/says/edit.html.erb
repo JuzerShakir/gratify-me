@@ -2,13 +2,13 @@
 
 <br>
 
-<% if @say.errors.messages.any? %>
+  <% if @say.errors.messages.any? %>
     <div id="error_explanation">
-    <% @say.errors.full_messages.each do | message | %>
-      <%= message %>
-    <% end %>
+      <% @say.errors.full_messages.each do | message | %>
+        <%= message %>
+      <% end %>
+    </div>
   <% end %>
-</div>
 
   <div id="post-quotes">
     <%= form_with model: @say, url: :edit_quote,  method: 'put', local: true do | field | %>
