@@ -6,9 +6,9 @@ class SaysController < ApplicationController
   end
 
   def create
-    current_user.says.new(create_params)
-    if current_user.valid?
-      current_user.save
+    @say = current_user.says.new(create_params)
+    if @say.valid?
+      @say.save
       redirect_to :root
     else
       redirect_to :root, flash: { validation: "Quote can't be blank" }
