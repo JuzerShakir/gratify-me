@@ -38,5 +38,4 @@ yarn-debug.log*
 
 /config/credentials/production.key
 
-/config/database.yml
 /config/cloudinary.yml
