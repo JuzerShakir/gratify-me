@@ -110,12 +110,12 @@ EDITOR="code --wait" rails credentials:edit
 _`code` for Visual Studio Code_
 _`subl` for sublime_
 
-This will open `crendetial.yml` file and enter credential as follows in it:
+This will open `credential.yml` file and enter credential as follows in it:
 
 ```
 database:
   username: your_username
-  passwordt: your_password
+  password: your_password
 ```
 
 Hit `ctrl + s` to save and then close the `credential.yml` file from the editor. This will save the credentials. To check if it did save, run the following inside rails console:
