@@ -1,6 +1,6 @@
-# Project: Gratify
+# Project: Gratify Me
 
-_A go-to hub for keeping track of notes, quotes, and anything that is text-based. Built with Ruby gems such as Devise + Omniauth + (Active Storage + Cloudinary) + Simple Form + Pagy._
+_A hub for keeping track of notes, quotes, and anything that is text-based._
 
 <div align="center">
   <img src="public/assets/project_logo.png" />
