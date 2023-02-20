@@ -3,7 +3,7 @@
 _A hub for keeping track of notes, quotes, and anything that is text-based._
 
 <div align="center">
-  <img src="public/assets/project_logo.png" />
+  <img src="app/assets/images/project_logo.png" />
 </div>
 
 ![](https://visitor-badge-reloaded.herokuapp.com/badge?page_id=juzershakir.gratify-me&color=000000&lcolor=000000&style=for-the-badge&logo=Github)
