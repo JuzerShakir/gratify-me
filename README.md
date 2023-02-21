@@ -151,7 +151,3 @@ rails s
 ```
 
 ---
-
-To see this web-app up and running, I have deployed it on [Heroku](https://gratify-me.herokuapp.com/).
-
----
