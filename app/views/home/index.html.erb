@@ -39,19 +39,20 @@
     <p class="alert alert-success"><%= flash[:post] %></p>
   <% end %>
 
-  <div id="show-quotes">
-    <% @says.order(created_at: :desc).each do | quotes | %>
-      <span>
-        <a href=<%= edit_quote_path(quotes.id) %>>
-          <%= quotes.quote %>
-        </a>
-        <p id="time"> <%= quotes.created_at.to_formatted_s(:long) %></p>
-      </span>
-    <% end %>
-  </div>
+  <% if @says.exists? %>
+    <div id="show-quotes">
+      <% @says.order(created_at: :desc).each do | quotes | %>
+        <span>
+          <a href=<%= edit_quote_path(quotes.id) %>>
+            <%= quotes.quote %>
+          </a>
+          <p id="time"> <%= quotes.created_at.to_formatted_s(:long) %></p>
+        </span>
+      <% end %>
+    </div>
 
-   <%== pagy_bootstrap_nav(@pagy) %>
-
+    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+  <% end %>
 
 <% else %>
 
