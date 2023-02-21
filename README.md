@@ -31,13 +31,13 @@ This web-app must accomplish the following:
 
 ## 💎 Required Gems
 
-**This project was built on Ruby version _2.7.2_.**
+**This project was built on Ruby version _3.1.2_.**
 
 Following important gems were installed in these versions:
 
 | **Gem Names** |      **Gem**       | **Version** |                     **Use**                      |
 | :-----------: | :----------------: | :---------: | :----------------------------------------------: |
-|     Rails     |     _'rails'_      | **6.1.4.1** |    _Use for executing and rendering web-app_     |
+|     Rails     |     _'rails'_      | **6.1.7.2** |    _Use for executing and rendering web-app_     |
 |  Postgresql   |       _'pg'_       |  **1.2.3**  | _Use postgres as the database for Active Record_ |
 |   Bootstrap   | _'bootstrap-sass'_ |  **3.4.1**  |                _For SCSS Styling_                |
 |    Devise     |     _'devise'_     |  **4.8.0**  |        _Flexible authentication solution_        |
