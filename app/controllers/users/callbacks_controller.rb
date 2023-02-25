@@ -28,7 +28,13 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
             # 'from_omniauth' defined in user model
             # request.env loads user details from the provider
             @user = User.from_omniauth(request.env["omniauth.auth"])
-            sign_in @user
+
+            # if user has been returned by the model then sign them in else redirect them to root with a message
+            if @user.nil?
+                redirect_to :root, flash: { headsup: "Uh Oh, a technical error has occured!" }
+            else
+                sign_in @user
+            end
         end
 
         def check_provider(provider_method)

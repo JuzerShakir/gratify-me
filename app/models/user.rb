@@ -15,14 +15,17 @@ class User < ApplicationRecord
   # since we are using omniauth for loggin user in
   # auth is a hash type passed from Callbacks Controller
   def self.from_omniauth(auth)
-    # we want to know if users' email is already in our database, since we want unique emails in our database regardless of provider he/she uses
-    # if user is in our database, load that user, if user doesn't exist then create one
-    where(email: auth.info.email).first_or_create do | user |
-      # following will run for new user, as it sets our database attributes with the value hash provides
-      user.provider = auth.provider.match(/[a-z]+/).to_s.capitalize
-      user.uid = auth.uid
-      user.email = auth.info.email
-      user.password = Devise.friendly_token
+    # rescues from the error message "undefined method 'info' on NilClass"
+    unless auth.nil?
+      # we want to know if users' email is already in our database, since we want unique emails in our database regardless of provider he/she uses
+      # if user is in our database, load that user, if user doesn't exist then create one
+      where(email: auth.info.email).first_or_create do | user |
+        # following will run for new user, as it sets our database attributes with the value hash provides
+        user.provider = auth.provider.match(/[a-z]+/).to_s.capitalize
+        user.uid = auth.uid
+        user.email = auth.info.email
+        user.password = Devise.friendly_token
+      end
     end
 
   end
